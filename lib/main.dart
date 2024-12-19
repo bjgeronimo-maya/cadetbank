@@ -1,8 +1,24 @@
+
+import 'package:cadetbank/core/navigation/router.dart';
+import 'package:cadetbank/core/navigation/routes.dart';
+import 'package:cadetbank/features/registration/registration_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+class CadetBankApp extends StatelessWidget {
+  const CadetBankApp({super.key});
+
+  @override
+  Widget build(BuildContext context) => const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    initialRoute: Routes.init,
+    onGenerateRoute: AppRouter.generateRoute,
+  );
+}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
