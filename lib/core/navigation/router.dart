@@ -1,8 +1,8 @@
 
 import 'package:cadetbank/core/navigation/routes.dart';
-import 'package:cadetbank/features/initial/initial_screen.dart';
-import 'package:cadetbank/features/login/login_screen.dart';
-import 'package:cadetbank/features/registration/registration_screen.dart';
+import 'package:cadetbank/presentation/screens/initial/initial_screen.dart';
+import 'package:cadetbank/presentation/screens/login/login_screen.dart';
+import 'package:cadetbank/presentation/screens/registration/registration_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {

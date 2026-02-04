@@ -1,11 +1,11 @@
 
 import 'package:cadetbank/core/navigation/router.dart';
 import 'package:cadetbank/core/navigation/routes.dart';
-import 'package:cadetbank/features/registration/registration_screen.dart';
+import 'package:cadetbank/presentation/screens/registration/registration_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const CadetBankApp());
 }
 
 class CadetBankApp extends StatelessWidget {
