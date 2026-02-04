@@ -9,6 +9,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(),
     body: const Center(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: Dimens.s20),
@@ -25,10 +26,13 @@ class LoginScreen extends StatelessWidget {
       ),
     ),
     bottomNavigationBar: Padding(
-      padding: const EdgeInsets.symmetric(vertical: Dimens.s20),
+      padding: const EdgeInsets.all(Dimens.s20),
       child:  ElevatedButton(
         onPressed: () {},
-        child: const Text(Strings.login),
+        child: Text(
+          Strings.login,
+          style: Theme.of(context).textTheme.labelMedium,
+        ),
       ),
     ),
   );

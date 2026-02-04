@@ -52,7 +52,10 @@ class RegistrationScreen extends StatelessWidget {
           onPressed: () {
             Navigator.pushReplacementNamed(context, Routes.login);
           },
-          child: const Text(Strings.login),
+          child: Text(
+            Strings.login,
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
         )
       ],
     )

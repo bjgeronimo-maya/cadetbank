@@ -23,4 +23,7 @@ class Strings {
 
   // S
   static const String startAnAccount = "Start an account";
+
+  // U
+  static const String usernameHint = "Enter username";
 }

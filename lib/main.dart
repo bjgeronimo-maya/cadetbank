@@ -1,6 +1,7 @@
 
 import 'package:cadetbank/core/navigation/router.dart';
 import 'package:cadetbank/core/navigation/routes.dart';
+import 'package:cadetbank/core/res/themes/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,8 +12,9 @@ class CadetBankApp extends StatelessWidget {
   const CadetBankApp({super.key});
 
   @override
-  Widget build(BuildContext context) => const MaterialApp(
+  Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
+    theme: appTheme,
     initialRoute: Routes.init,
     onGenerateRoute: AppRouter.generateRoute,
   );

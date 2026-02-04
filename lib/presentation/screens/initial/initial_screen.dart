@@ -1,5 +1,6 @@
 
 import 'package:cadetbank/core/navigation/routes.dart';
+import 'package:cadetbank/core/res/values/app_colors.dart';
 import 'package:cadetbank/core/res/values/assets.dart';
 import 'package:cadetbank/core/res/values/dimens.dart';
 import 'package:cadetbank/core/res/values/strings.dart';
@@ -21,20 +22,45 @@ class InitialScreen extends StatelessWidget {
     bottomNavigationBar: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).pushNamed(Routes.registration);
-          },
-          child: const Text(Strings.startAnAccount),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: Dimens.s20,
+          ),
+          child: SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(Routes.registration);
+              },
+              child: Text(
+                Strings.startAnAccount,
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
+            ),
+          ),
         ),
 
         const SizedBox(height: Dimens.s10),
 
-        ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).pushNamed(Routes.login);
-          },
-          child: const Text(Strings.login),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: Dimens.s20,
+          ),
+          child: SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(Routes.login);
+              },
+              style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
+                backgroundColor: const WidgetStatePropertyAll(AppColors.grayE1E5E8),
+              ),
+              child: Text(
+                Strings.login,
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
+            ),
+          ),
         ),
 
         const SizedBox(height: Dimens.s20),

@@ -8,8 +8,8 @@ class LoginForm extends StatelessWidget {
   Widget build(BuildContext context) => const Column(
     children: [
       TextField(
-        keyboardType: TextInputType.number,
-        decoration: InputDecoration(hintText: Strings.mobileNumberHint),
+        keyboardType: TextInputType.text,
+        decoration: InputDecoration(hintText: Strings.usernameHint),
       ),
 
       TextField(
