@@ -1,4 +1,4 @@
-import 'package:cadetbank/res/strings.dart';
+import 'package:cadetbank/core/res/values/strings.dart';
 import 'package:flutter/material.dart';
 
 class LoginForm extends StatelessWidget {

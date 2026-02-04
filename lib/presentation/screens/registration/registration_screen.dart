@@ -1,12 +1,8 @@
 
-import 'package:cadetbank/features/login/widgets/login_button.dart';
-import 'package:cadetbank/features/login/widgets/login_form.dart';
-import 'package:cadetbank/features/login/widgets/login_logo.dart';
-import 'package:cadetbank/features/registration/widgets/reg_login_button.dart';
-import 'package:cadetbank/features/registration/widgets/registration_button.dart';
-import 'package:cadetbank/features/registration/widgets/reigstration_form.dart';
-import 'package:cadetbank/res/dimens.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:cadetbank/core/navigation/routes.dart';
+import 'package:cadetbank/core/res/values/dimens.dart';
+import 'package:cadetbank/core/res/values/strings.dart';
+import 'package:cadetbank/presentation/screens/registration/widgets/registration_form.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatelessWidget {
@@ -25,7 +21,7 @@ class RegistrationScreen extends StatelessWidget {
                 style: TextStyle(color: Colors.black),
                 children: <TextSpan>[
                   TextSpan(
-                      text: 'Start an'
+                      text: 'Start an '
                   ),
                   TextSpan(
                     style: TextStyle(color: Colors.green),
@@ -42,14 +38,22 @@ class RegistrationScreen extends StatelessWidget {
         ),
       ),
     ),
-    bottomNavigationBar: const Column(
+    bottomNavigationBar: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        RegistrationButton(),
+        ElevatedButton(
+          onPressed: () {},
+          child: const Text(Strings.kContinue),
+        ),
 
-        SizedBox(height: 20),
+        const SizedBox(height: Dimens.s20),
 
-        RegLoginButton()
+        ElevatedButton(
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, Routes.login);
+          },
+          child: const Text(Strings.login),
+        )
       ],
     )
   );

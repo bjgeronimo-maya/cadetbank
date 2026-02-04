@@ -12,7 +12,7 @@ class AppRouter {
         return AppTransition.none(child: const InitialScreen());
       case Routes.login:
         return AppTransition.slide(child: const LoginScreen());
-      case Routes.register:
+      case Routes.registration:
         return AppTransition.slide(child: const RegistrationScreen());
       default:
         return AppTransition.none(child: const SizedBox.shrink());

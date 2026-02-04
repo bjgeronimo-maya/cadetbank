@@ -1,6 +1,13 @@
 
 class Routes {
-  static const String init = '/';
-  static const String login = "/login";
-  static const String register = "/register";
+  const Routes._();
+
+  // I
+  static const String init = 'initialScreen';
+
+  // L
+  static const String login = "loginScreen";
+
+  // R
+  static const String registration = "registrationScreen";
 }

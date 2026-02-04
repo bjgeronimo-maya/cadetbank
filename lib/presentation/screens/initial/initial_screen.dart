@@ -1,8 +1,8 @@
 
 import 'package:cadetbank/core/navigation/routes.dart';
-import 'package:cadetbank/res/assets.dart';
-import 'package:cadetbank/res/dimens.dart';
-import 'package:cadetbank/res/strings.dart';
+import 'package:cadetbank/core/res/values/assets.dart';
+import 'package:cadetbank/core/res/values/dimens.dart';
+import 'package:cadetbank/core/res/values/strings.dart';
 import 'package:flutter/material.dart';
 
 class InitialScreen extends StatelessWidget {
@@ -23,7 +23,7 @@ class InitialScreen extends StatelessWidget {
       children: [
         ElevatedButton(
           onPressed: () {
-            Navigator.of(context).pushNamed(Routes.register);
+            Navigator.of(context).pushNamed(Routes.registration);
           },
           child: const Text(Strings.startAnAccount),
         ),

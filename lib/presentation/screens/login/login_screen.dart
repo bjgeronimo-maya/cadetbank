@@ -1,16 +1,15 @@
-
-import 'package:cadetbank/features/login/widgets/login_button.dart';
-import 'package:cadetbank/features/login/widgets/login_form.dart';
-import 'package:cadetbank/features/login/widgets/login_logo.dart';
-import 'package:cadetbank/res/dimens.dart';
+import 'package:cadetbank/core/res/values/dimens.dart';
+import 'package:cadetbank/core/res/values/strings.dart';
+import 'package:cadetbank/presentation/screens/login/widgets/login_form.dart';
+import 'package:cadetbank/presentation/screens/login/widgets/login_logo.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
-  Widget build(BuildContext context) => const Scaffold(
-    body: Center(
+  Widget build(BuildContext context) => Scaffold(
+    body: const Center(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: Dimens.s20),
         child: Column(
@@ -25,6 +24,12 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
     ),
-    bottomNavigationBar: LoginButton()
+    bottomNavigationBar: Padding(
+      padding: const EdgeInsets.symmetric(vertical: Dimens.s20),
+      child:  ElevatedButton(
+        onPressed: () {},
+        child: const Text(Strings.login),
+      ),
+    ),
   );
 }

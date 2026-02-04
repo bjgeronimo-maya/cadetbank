@@ -1,6 +1,6 @@
 
-import 'package:cadetbank/res/assets.dart';
-import 'package:cadetbank/res/dimens.dart';
+import 'package:cadetbank/core/res/values/assets.dart';
+import 'package:cadetbank/core/res/values/dimens.dart';
 import 'package:flutter/material.dart';
 
 class LoginLogo extends StatelessWidget {

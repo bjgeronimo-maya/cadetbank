@@ -34,4 +34,5 @@ flutter:
   uses-material-design: true
 
   assets:
-   - assets/images/
+    - lib/core/res/assets/png/
+    - lib/core/res/assets/webp/
