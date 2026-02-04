@@ -9,6 +9,7 @@ class Strings {
   static const String kContinue = "Continue";
 
   // L
+  static const String loadingMessage = "Please wait while we process your request";
   static const String login = "Login";
 
   // M

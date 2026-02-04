@@ -3,6 +3,7 @@ class Assets {
   const Assets._();
 
   // APP ASSETS LOCAL PATHS
+  static const String _jsonPath = 'lib/core/res/assets/json';
   static const String _pngPath = 'lib/core/res/assets/png';
   static const String _webpPath = 'lib/core/res/assets/webp';
 
@@ -11,4 +12,7 @@ class Assets {
 
   // L
   static const String loginLogo = '$_pngPath/maya_login_logo.png';
+
+  // Z
+  static const String ziggyLoader = '$_jsonPath/anim_ziggy_loader.json';
 }

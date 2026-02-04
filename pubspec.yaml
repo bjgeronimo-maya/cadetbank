@@ -19,6 +19,7 @@ dependencies:
   dio: ^5.5.0+1
   get_it: ^7.7.0
   pretty_dio_logger: ^1.4.0
+  lottie: ^3.3.1
 
 dev_dependencies:
   flutter_test:
@@ -34,5 +35,6 @@ flutter:
   uses-material-design: true
 
   assets:
+    - lib/core/res/assets/json/
     - lib/core/res/assets/png/
     - lib/core/res/assets/webp/
