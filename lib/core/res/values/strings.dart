@@ -18,7 +18,7 @@ class Strings {
   static const String login = "Login";
 
   // M
-  static const String mobileNumber = "Mbile number";
+  static const String mobileNumber = "Mobile number";
   static const String mobileNumberHint = "Enter mobile number";
 
   // N
