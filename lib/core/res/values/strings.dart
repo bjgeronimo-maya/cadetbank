@@ -31,4 +31,9 @@ class Strings {
   // U
   static const String username = "Username";
   static const String usernameHint = "Enter username";
+
+  // H
+  static const String welcome = "Welcome to Maya Bank Homepage";
+  static const String tagline = "It's everything and a bank";
+
 }
