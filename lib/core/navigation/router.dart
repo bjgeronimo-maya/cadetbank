@@ -1,5 +1,5 @@
-
 import 'package:cadetbank/core/navigation/routes.dart';
+import 'package:cadetbank/presentation/screens/home/home_screen.dart';
 import 'package:cadetbank/presentation/screens/initial/initial_screen.dart';
 import 'package:cadetbank/presentation/screens/login/cubits/login_form/login_form_cubit.dart';
 import 'package:cadetbank/presentation/screens/login/login_screen.dart';
@@ -10,6 +10,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case Routes.home:
+        return AppTransition.slide(child: const HomeScreen());
       case Routes.init:
         return AppTransition.none(child: const InitialScreen());
       case Routes.login:
@@ -22,18 +24,16 @@ class AppRouter {
   }
 
   static Widget buildLoginScreen() => MultiBlocProvider(
-    providers: [
-      BlocProvider(
-        create: (_) => LoginFormCubit(),
-      ),
-    ],
-    child: const LoginScreen(),
-  );
+        providers: [
+          BlocProvider(
+            create: (_) => LoginFormCubit(),
+          ),
+        ],
+        child: const LoginScreen(),
+      );
 }
 
-
 class AppTransition {
-
   static PageRouteBuilder none({
     required Widget child,
   }) {
@@ -56,7 +56,8 @@ class AppTransition {
         const end = Offset.zero;
         const curve = Curves.ease;
 
-        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
         var slideAnimation = animation.drive(tween);
 
