@@ -6,7 +6,8 @@ void main() async {
 
   //Exercise 2
   print("=====");
-  displayUserInfo("Jopet", 25, "Laguna");
+  displayUserInfo(name: "Jopet", age: 25, address: "Laguna");
+  displayUserInfo(name: "Jopet", age: 25);
   print("=====");
 
   // Exercise 3
@@ -26,7 +27,7 @@ Future<void> fetchPersonInfo() async {
   print("Age: 25");
 }
 
-void displayUserInfo(String name, int age, String? address) {
+void displayUserInfo({required String name, int age = 0, String? address}) {
   print("Name: $name");
   print("Age: $age");
   print("Address: ${address ?? "Address Not provided"}");
