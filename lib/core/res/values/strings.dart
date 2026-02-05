@@ -20,6 +20,10 @@ class Strings {
 
   // N
   static const String nameHint = "Enter your name";
+  static const String firstNamehint = "First name";
+  static const String middleNameHint = "Middle name";
+  static const String lastNameHint = "Last name";
+  static const String noLegalMiddleName = "I have no legal middle name";
 
   // P
   static const String password = "Password";
@@ -31,4 +35,9 @@ class Strings {
   // U
   static const String username = "Username";
   static const String usernameHint = "Enter username";
+
+  // H
+  static const String welcome = "Welcome to Maya Bank Homepage";
+  static const String tagline = "It's everything and a bank";
+
 }

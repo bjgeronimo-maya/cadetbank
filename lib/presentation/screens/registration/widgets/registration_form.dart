@@ -1,31 +1,47 @@
 import 'package:cadetbank/core/res/values/strings.dart';
+import 'package:cadetbank/presentation/screens/registration/widgets/middleNameToggle.dart';
 import 'package:flutter/material.dart';
+import 'register_text_field.dart';
 
-class RegistrationForm extends StatelessWidget {
+class RegistrationForm extends StatefulWidget {
   const RegistrationForm({super.key});
 
   @override
-  Widget build(BuildContext context) => const Column(
-    children: [
-      TextField(
-        keyboardType: TextInputType.name,
-        decoration: InputDecoration(hintText: Strings.nameHint),
-      ),
+  State<RegistrationForm> createState() => _RegistrationFormState();
+}
 
-      TextField(
-        keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(hintText: Strings.emailHint),
-      ),
+class _RegistrationFormState extends State<RegistrationForm> {
+  bool noMiddleName = false;
 
-      TextField(
-        keyboardType: TextInputType.number,
-        decoration: InputDecoration(hintText: Strings.mobileNumberHint),
-      ),
-
-      TextField(
-        keyboardType: TextInputType.visiblePassword,
-        decoration: InputDecoration(hintText: Strings.passwordHint),
-      ),
-    ],
-  );
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const RegisterTextField(
+          keyboardType: TextInputType.name,
+          hintText: Strings.firstNamehint,
+        ),
+        const RegisterTextField(
+          keyboardType: TextInputType.name,
+          hintText: Strings.middleNameHint,
+        ),
+        MiddleNameToggle(
+          value: noMiddleName,
+          onChanged: (value) {
+            setState(() {
+              noMiddleName = value;
+            });
+          },
+        ),
+        const RegisterTextField(
+          keyboardType: TextInputType.name,
+          hintText: Strings.lastNameHint,
+        ),
+        const RegisterTextField(
+          keyboardType: TextInputType.emailAddress,
+          hintText: Strings.emailHint,
+        ),
+      ],
+    );
+  }
 }
