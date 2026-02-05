@@ -17,3 +17,9 @@ void displayUserInfo(String name, {required int age, String? address}) {
     print("Address: $address");
   }
 }
+
+extension on String {
+  String isBlankOrEmpty() {
+    return this.trim().isEmpty ? "String is empty" : "String is not empty";
+  }
+}
