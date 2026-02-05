@@ -1,3 +1,4 @@
+import 'package:cadetbank/core/navigation/routes.dart';
 import 'package:cadetbank/core/res/values/dimens.dart';
 import 'package:cadetbank/core/res/values/strings.dart';
 import 'package:cadetbank/presentation/screens/login/widgets/login_form.dart';
@@ -28,7 +29,9 @@ class LoginScreen extends StatelessWidget {
     bottomNavigationBar: Padding(
       padding: const EdgeInsets.all(Dimens.s20),
       child:  ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushReplacementNamed(Routes.home);
+        },
         child: Text(
           Strings.login,
           style: Theme.of(context).textTheme.labelMedium,
