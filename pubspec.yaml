@@ -40,3 +40,15 @@ flutter:
     - lib/core/res/assets/json/
     - lib/core/res/assets/png/
     - lib/core/res/assets/webp/
+
+  fonts:
+    - family: CerebriSansPro
+      fonts:
+        - asset: lib/core/res/assets/fonts/CerebriSansPro-Regular.otf
+          weight: 400
+        - asset: lib/core/res/assets/fonts/CerebriSansPro-Medium.otf
+          weight: 500
+        - asset: lib/core/res/assets/fonts/CerebriSansPro-SemiBold.otf
+          weight: 600
+        - asset: lib/core/res/assets/fonts/CerebriSansPro-Bold.otf
+          weight: 700

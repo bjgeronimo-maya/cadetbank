@@ -1,10 +1,12 @@
 
+import 'package:cadetbank/core/di/service_locator.dart';
 import 'package:cadetbank/core/navigation/router.dart';
 import 'package:cadetbank/core/navigation/routes.dart';
 import 'package:cadetbank/core/res/themes/theme.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  await setupDependencies();
   runApp(const CadetBankApp());
 }
 

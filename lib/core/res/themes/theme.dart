@@ -7,6 +7,7 @@ part 'elevated_button_theme.dart';
 part 'text_theme.dart';
 
 ThemeData get appTheme => ThemeData(
+  fontFamily: 'CerebriSansPro',
   elevatedButtonTheme: _elevatedButtonTheme,
   textTheme: _textTheme,
 );
