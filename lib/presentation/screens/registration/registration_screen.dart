@@ -18,16 +18,45 @@ class RegistrationScreen extends StatelessWidget {
           children: [
             RichText(
               text: const TextSpan(
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 36,
+                    fontWeight: FontWeight.bold,
+                ),
                 children: <TextSpan>[
                   TextSpan(
-                      text: 'Start an '
+                      text: 'Join '
                   ),
                   TextSpan(
-                    style: TextStyle(color: Colors.green),
-                    text: 'account',
+                    style: TextStyle(
+                        color: Colors.green,
+                        fontWeight: FontWeight.w800
+                    ),
+                    text: 'Maya',
+                  ),
+                  TextSpan(
+                      text: ' today!'
                   ),
                 ],
+              ),
+            ),
+
+            const SizedBox(height: Dimens.s10),
+
+            Image.network(
+              'https://media.tenor.com/JGtEAA81MqUAAAAj/blob-cat-party-blob.gif',
+              width: 50,
+              height: 50,
+            ),
+
+            const SizedBox(height: Dimens.s10),
+
+            Text(
+              'Fill in your details below to get started.',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey.shade600,
+                fontWeight: FontWeight.w400,
               ),
             ),
 
