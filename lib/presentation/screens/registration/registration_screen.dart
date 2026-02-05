@@ -2,6 +2,7 @@
 import 'package:cadetbank/core/navigation/routes.dart';
 import 'package:cadetbank/core/res/values/dimens.dart';
 import 'package:cadetbank/core/res/values/strings.dart';
+import 'package:cadetbank/presentation/screens/login/widgets/login_logo.dart';
 import 'package:cadetbank/presentation/screens/registration/widgets/registration_form.dart';
 import 'package:flutter/material.dart';
 
@@ -16,15 +17,19 @@ class RegistrationScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            const LoginLogo(),
+
+            const SizedBox(height: Dimens.s30),
+
             RichText(
               text: const TextSpan(
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w600),
                 children: <TextSpan>[
                   TextSpan(
                       text: 'Start an '
                   ),
                   TextSpan(
-                    style: TextStyle(color: Colors.green),
+                    style: TextStyle(color: Colors.green, fontWeight: FontWeight.w900),
                     text: 'account',
                   ),
                 ],
