@@ -20,6 +20,10 @@ class Strings {
 
   // N
   static const String nameHint = "Enter your name";
+  static const String firstNamehint = "First name";
+  static const String middleNameHint = "Middle name";
+  static const String lastNameHint = "Last name";
+  static const String noLegalMiddleName = "I have no legal middle name";
 
   // P
   static const String password = "Password";
