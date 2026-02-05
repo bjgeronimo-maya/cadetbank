@@ -1,9 +1,11 @@
 
 import 'package:cadetbank/core/navigation/routes.dart';
 import 'package:cadetbank/presentation/screens/initial/initial_screen.dart';
+import 'package:cadetbank/presentation/screens/login/cubits/login_form/login_form_cubit.dart';
 import 'package:cadetbank/presentation/screens/login/login_screen.dart';
 import 'package:cadetbank/presentation/screens/registration/registration_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -11,13 +13,22 @@ class AppRouter {
       case Routes.init:
         return AppTransition.none(child: const InitialScreen());
       case Routes.login:
-        return AppTransition.slide(child: const LoginScreen());
+        return AppTransition.slide(child: buildLoginScreen());
       case Routes.registration:
         return AppTransition.slide(child: const RegistrationScreen());
       default:
         return AppTransition.none(child: const SizedBox.shrink());
     }
   }
+
+  static Widget buildLoginScreen() => MultiBlocProvider(
+    providers: [
+      BlocProvider(
+        create: (_) => LoginFormCubit(),
+      ),
+    ],
+    child: const LoginScreen(),
+  );
 }
 
 
