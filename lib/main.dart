@@ -1,4 +1,3 @@
-
 import 'package:cadetbank/core/navigation/router.dart';
 import 'package:cadetbank/core/navigation/routes.dart';
 import 'package:cadetbank/core/res/themes/theme.dart';
@@ -13,13 +12,12 @@ class CadetBankApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-    debugShowCheckedModeBanner: false,
-    theme: appTheme,
-    initialRoute: Routes.init,
-    onGenerateRoute: AppRouter.generateRoute,
-  );
+        debugShowCheckedModeBanner: false,
+        theme: appTheme,
+        initialRoute: Routes.init,
+        onGenerateRoute: AppRouter.generateRoute,
+      );
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

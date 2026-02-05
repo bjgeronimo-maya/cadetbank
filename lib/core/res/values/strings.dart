@@ -1,18 +1,22 @@
-
 class Strings {
   const Strings._();
+
+  // A
+  static const String alreadyHaveAccount = "Already have an account? Login";
 
   // E
   static const String emailHint = "Enter your email address";
 
   // G
-  static const String genericErrorMessage = 'Something went wrong, please try again later';
+  static const String genericErrorMessage =
+      'Something went wrong, please try again later';
 
   // K
   static const String kContinue = "Continue";
 
   // L
-  static const String loadingMessage = "Please wait while we process your request";
+  static const String loadingMessage =
+      "Please wait while we process your request";
   static const String login = "Login";
 
   // M

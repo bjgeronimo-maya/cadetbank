@@ -1,3 +1,4 @@
+import 'package:cadetbank/core/navigation/routes.dart';
 import 'package:cadetbank/core/res/values/dimens.dart';
 import 'package:cadetbank/core/res/values/strings.dart';
 import 'package:cadetbank/presentation/screens/login/widgets/login_form.dart';
@@ -9,31 +10,30 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(),
-    body: const Padding(
-      padding: EdgeInsets.symmetric(horizontal: Dimens.s20),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SizedBox(height: Dimens.s100),
-
-          LoginLogo(),
-
-          SizedBox(height: Dimens.s20),
-
-          LoginForm(),
-        ],
-      ),
-    ),
-    bottomNavigationBar: Padding(
-      padding: const EdgeInsets.all(Dimens.s20),
-      child:  ElevatedButton(
-        onPressed: () {},
-        child: Text(
-          Strings.login,
-          style: Theme.of(context).textTheme.labelMedium,
+        appBar: AppBar(),
+        body: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: Dimens.s20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(height: Dimens.s100),
+              LoginLogo(),
+              SizedBox(height: Dimens.s20),
+              LoginForm(),
+            ],
+          ),
         ),
-      ),
-    ),
-  );
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.all(Dimens.s20),
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, Routes.home);
+            },
+            child: Text(
+              Strings.login,
+              style: Theme.of(context).textTheme.labelMedium,
+            ),
+          ),
+        ),
+      );
 }

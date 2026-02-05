@@ -1,6 +1,8 @@
-
 class Routes {
   const Routes._();
+
+  // H
+  static const String home = 'homeScreen';
 
   // I
   static const String init = 'initialScreen';
