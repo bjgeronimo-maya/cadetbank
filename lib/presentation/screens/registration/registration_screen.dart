@@ -20,7 +20,7 @@ class RegistrationScreen extends StatelessWidget {
           children: [
             const LoginLogo(),
 
-            const SizedBox(height: Dimens.s30),
+            const SizedBox(height: Dimens.s14),
 
             RichText(
               text: const TextSpan(
