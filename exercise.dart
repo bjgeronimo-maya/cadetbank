@@ -9,3 +9,11 @@ void main() async {
   await fetchPersonInfo();
   print("Done!");
 }
+
+void displayUserInfo(String name, {required int age, String? address}) {
+  print("Name: $name");
+  print("Age: $age");
+  if (address != null) {
+    print("Address: $address");
+  }
+}
