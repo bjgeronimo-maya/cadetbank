@@ -4,15 +4,15 @@ import 'package:cadetbank/presentation/screens/login/cubits/login/login_state.da
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  final LoginUseCase loginUseCase;
-  LoginCubit(this.loginUseCase) : super(const LoginState.initial());
+  final LoginUseCase _loginUseCase;
+  LoginCubit(this._loginUseCase) : super(const LoginState.initial());
 
   void login({
     required String username,
     required String password,
   }) async {
     emit(const LoginState.loading());
-    final result = await loginUseCase(
+    final result = await _loginUseCase(
       username: username,
       password: password,
     );

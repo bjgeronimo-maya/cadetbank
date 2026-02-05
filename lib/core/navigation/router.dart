@@ -1,6 +1,9 @@
 
+import 'package:cadetbank/core/di/service_locator.dart';
 import 'package:cadetbank/core/navigation/routes.dart';
+import 'package:cadetbank/presentation/screens/home/home_screen.dart';
 import 'package:cadetbank/presentation/screens/initial/initial_screen.dart';
+import 'package:cadetbank/presentation/screens/login/cubits/login/login_cubit.dart';
 import 'package:cadetbank/presentation/screens/login/cubits/login_form/login_form_cubit.dart';
 import 'package:cadetbank/presentation/screens/login/login_screen.dart';
 import 'package:cadetbank/presentation/screens/registration/registration_screen.dart';
@@ -12,6 +15,8 @@ class AppRouter {
     switch (settings.name) {
       case Routes.init:
         return AppTransition.none(child: const InitialScreen());
+      case Routes.home:
+        return AppTransition.slide(child: const HomeScreen());
       case Routes.login:
         return AppTransition.slide(child: buildLoginScreen());
       case Routes.registration:
@@ -23,6 +28,10 @@ class AppRouter {
 
   static Widget buildLoginScreen() => MultiBlocProvider(
     providers: [
+      BlocProvider(
+        create: (_) => LoginCubit(serviceLocator()),
+      ),
+
       BlocProvider(
         create: (_) => LoginFormCubit(),
       ),
