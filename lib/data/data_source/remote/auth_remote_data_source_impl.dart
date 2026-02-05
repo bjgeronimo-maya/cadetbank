@@ -10,9 +10,6 @@ class AuthRemoteDataSourceImpl implements AuthDataSource {
   
   @override
   Future<void> login(LoginRequest loginRequest) {
-    return dio.post(
-      Endpoints.login,
-      data: loginRequest.toJson(),
-    );
+    return dio.post(Endpoints.login, data: loginRequest);
   }
 }

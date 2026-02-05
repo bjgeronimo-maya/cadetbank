@@ -5,6 +5,9 @@ class Strings {
   // E
   static const String emailHint = "Enter your email address";
 
+  // G
+  static const String genericErrorMessage = 'Something went wrong, please try again later';
+
   // K
   static const String kContinue = "Continue";
 
