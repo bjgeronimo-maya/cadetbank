@@ -2,6 +2,7 @@
 import 'package:cadetbank/core/navigation/routes.dart';
 import 'package:cadetbank/core/res/values/dimens.dart';
 import 'package:cadetbank/core/res/values/strings.dart';
+import 'package:cadetbank/presentation/screens/home/home_screen.dart';
 import 'package:cadetbank/presentation/screens/login/widgets/login_logo.dart';
 import 'package:cadetbank/presentation/screens/registration/widgets/registration_form.dart';
 import 'package:flutter/material.dart';
@@ -43,26 +44,34 @@ class RegistrationScreen extends StatelessWidget {
         ),
       ),
     ),
-    bottomNavigationBar: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        ElevatedButton(
-          onPressed: () {},
-          child: const Text(Strings.kContinue),
-        ),
-
-        const SizedBox(height: Dimens.s20),
-
-        ElevatedButton(
-          onPressed: () {
-            Navigator.pushReplacementNamed(context, Routes.login);
-          },
-          child: Text(
-            Strings.login,
-            style: Theme.of(context).textTheme.labelMedium,
+    bottomNavigationBar: Padding(
+      padding: const EdgeInsets.all(Dimens.s32),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const HomeScreen())
+              );
+            },
+            child: const Text(Strings.kContinue),
           ),
-        )
-      ],
+
+          const SizedBox(height: Dimens.s20),
+
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, Routes.login);
+            },
+            child: Text(
+              Strings.login,
+              style: Theme.of(context).textTheme.labelMedium,
+            ),
+          )
+        ],
+      )
     )
   );
 }
