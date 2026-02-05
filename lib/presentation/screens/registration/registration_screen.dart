@@ -45,9 +45,10 @@ class RegistrationScreen extends StatelessWidget {
       ),
     ),
     bottomNavigationBar: Padding(
-      padding: const EdgeInsets.all(Dimens.s32),
+      padding: const EdgeInsets.all(Dimens.s20),
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           ElevatedButton(
             onPressed: () {
