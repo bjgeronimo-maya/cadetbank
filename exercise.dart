@@ -8,6 +8,9 @@ void main() async {
   print("Start fetching...");
   await fetchPersonInfo();
   print("Done!");
+  displayUserInfo("Victor Reyes", age: 23, address: "Secret");
+  String testString = "   ";
+  print(testString.isBlankOrEmpty());
 }
 
 void displayUserInfo(String name, {required int age, String? address}) {
