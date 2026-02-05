@@ -1,4 +1,3 @@
-
 import 'package:cadetbank/core/navigation/routes.dart';
 import 'package:cadetbank/core/res/values/dimens.dart';
 import 'package:cadetbank/core/res/values/strings.dart';
@@ -10,54 +9,54 @@ class RegistrationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    body: Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: Dimens.s20),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            RichText(
-              text: const TextSpan(
-                style: TextStyle(color: Colors.black),
-                children: <TextSpan>[
-                  TextSpan(
-                      text: 'Start an '
+    body: SafeArea(
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: Dimens.s20),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                RichText(
+                  text: const TextSpan(
+                    style: TextStyle(
+                      fontSize: 50,
+                      fontWeight: FontWeight.w900,
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'Start an \n',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      TextSpan(
+                        text: 'account',
+                        style: TextStyle(color: Colors.green),
+                      ),
+                    ],
                   ),
-                  TextSpan(
-                    style: TextStyle(color: Colors.green),
-                    text: 'account',
-                  ),
-                ],
-              ),
+                ),
+
+                const SizedBox(height: Dimens.s25),
+
+                const RegistrationForm(),
+              ],
             ),
-
-            const SizedBox(height: Dimens.s20),
-
-            const RegistrationForm(),
-          ],
+          ),
         ),
       ),
     ),
-    bottomNavigationBar: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        ElevatedButton(
-          onPressed: () {},
-          child: const Text(Strings.kContinue),
+    bottomNavigationBar: Padding(
+      padding: const EdgeInsets.all(Dimens.s20),
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.pushReplacementNamed(context, Routes.login);
+        },
+        child: Text(
+          Strings.kContinue,
+          style: Theme.of(context).textTheme.labelMedium,
         ),
-
-        const SizedBox(height: Dimens.s20),
-
-        ElevatedButton(
-          onPressed: () {
-            Navigator.pushReplacementNamed(context, Routes.login);
-          },
-          child: Text(
-            Strings.login,
-            style: Theme.of(context).textTheme.labelMedium,
-          ),
-        )
-      ],
-    )
+      ),
+    ),
   );
 }
