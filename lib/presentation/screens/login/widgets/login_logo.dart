@@ -9,6 +9,8 @@ class LoginLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(horizontal: Dimens.s50),
-    child: Image.asset(Assets.loginLogo),
+    child: Image.asset(
+      Assets.loginLogo,
+    ),
   );
 }

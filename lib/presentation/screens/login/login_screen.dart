@@ -10,19 +10,19 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(),
-    body: const Center(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: Dimens.s20),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            LoginLogo(),
+    body: const Padding(
+      padding: EdgeInsets.symmetric(horizontal: Dimens.s20),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(height: Dimens.s100),
 
-            SizedBox(height: Dimens.s20),
+          LoginLogo(),
 
-            LoginForm(),
-          ],
-        ),
+          SizedBox(height: Dimens.s20),
+
+          LoginForm(),
+        ],
       ),
     ),
     bottomNavigationBar: Padding(

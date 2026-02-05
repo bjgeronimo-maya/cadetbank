@@ -19,11 +19,13 @@ class Strings {
   static const String nameHint = "Enter your name";
 
   // P
+  static const String password = "Password";
   static const String passwordHint = "Enter password";
 
   // S
   static const String startAnAccount = "Start an account";
 
   // U
+  static const String username = "Username";
   static const String usernameHint = "Enter username";
 }

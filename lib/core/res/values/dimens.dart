@@ -113,4 +113,5 @@ class Dimens {
   static const double s99 = 99.0;
   static const double s100 = 100.0;
 
+  static const double s200 = 200.0;
 }
