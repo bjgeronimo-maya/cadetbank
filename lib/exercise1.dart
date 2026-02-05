@@ -10,6 +10,12 @@ void displayUserInfo(String name, {required int age, String address = "No addres
   print("Address: $address");
 }
 
+extension on String {
+  bool isBlankOrEmpty() {
+    return this.trim().isEmpty;
+  }
+}
+
 void main() async {
     // Item 1
     print("Start fetching...");
@@ -19,4 +25,10 @@ void main() async {
     // Item 2
     displayUserInfo("Anton", age: 23, address: "Quezon City");
     displayUserInfo("Maki", age: 3);
+
+    // Item 3
+    print("".isBlankOrEmpty());
+    print("   ".isBlankOrEmpty());
+    print(" \n ".isBlankOrEmpty());
+    print(" Hello world! ".isBlankOrEmpty());
 }
