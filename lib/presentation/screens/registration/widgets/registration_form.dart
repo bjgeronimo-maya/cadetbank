@@ -1,30 +1,50 @@
 import 'package:cadetbank/core/res/values/strings.dart';
+import 'package:cadetbank/core/res/values/dimens.dart';
+import 'package:cadetbank/presentation/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationForm extends StatelessWidget {
   const RegistrationForm({super.key});
 
   @override
-  Widget build(BuildContext context) => const Column(
+  Widget build(BuildContext context) => Column(
     children: [
-      TextField(
-        keyboardType: TextInputType.name,
-        decoration: InputDecoration(hintText: Strings.nameHint),
+      InputField(
+        label: Strings.username,
+        hint: Strings.usernameHint,
+        onChanged: (value) => const {},
       ),
 
-      TextField(
-        keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(hintText: Strings.emailHint),
+      const SizedBox(height: Dimens.s16),
+
+      InputField(
+        label: Strings.email,
+        hint: Strings.emailHint,
+        onChanged: (value) => const {},
       ),
 
-      TextField(
-        keyboardType: TextInputType.number,
-        decoration: InputDecoration(hintText: Strings.mobileNumberHint),
+      const SizedBox(height: Dimens.s16),
+
+      InputField(
+        label: Strings.number,
+        hint: Strings.mobileNumberHint,
+        onChanged: (value) => const {},
       ),
 
-      TextField(
-        keyboardType: TextInputType.visiblePassword,
-        decoration: InputDecoration(hintText: Strings.passwordHint),
+      const SizedBox(height: Dimens.s16),
+
+      InputField(
+        label: Strings.password,
+        hint: Strings.passwordHint,
+        onChanged: (value) => const {},
+      ),
+
+      const SizedBox(height: Dimens.s16),
+
+      InputField(
+        label: Strings.confirmPassword,
+        hint: Strings.confirmPasswordHint,
+        onChanged: (value) => const {},
       ),
     ],
   );

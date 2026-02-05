@@ -1,0 +1,28 @@
+Future<void> fetchPersonInfo() async {
+  await Future.delayed(const Duration(seconds: 3));
+  print("Name: Juan dela Cruz");
+  print("Age: 20");
+}
+
+void main() async {
+  print("Start fetching...");
+  await fetchPersonInfo();
+  print("Done!");
+  displayUserInfo("Victor Reyes", age: 23, address: "Secret");
+  String testString = "   ";
+  print(testString.isBlankOrEmpty());
+}
+
+void displayUserInfo(String name, {required int age, String? address}) {
+  print("Name: $name");
+  print("Age: $age");
+  if (address != null) {
+    print("Address: $address");
+  }
+}
+
+extension on String {
+  bool isBlankOrEmpty() {
+    return this.trim().isEmpty;
+  }
+}
