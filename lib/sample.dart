@@ -1,7 +1,7 @@
-void main() {
+void main() async {
   // Exercise 1
   print("Start Fetching...");
-  fetchPersonInfo();
+  await fetchPersonInfo();
   print("Done!");
 
   //Exercise 2
@@ -29,9 +29,5 @@ Future<void> fetchPersonInfo() async {
 void displayUserInfo(String name, int age, String? address) {
   print("Name: $name");
   print("Age: $age");
-  if (address != null) {
-    print("Address: $address");
-  } else {
-    print("Address: Not provided");
-  }
+  print("Address: ${address ?? "Address Not provided"}");
 }
