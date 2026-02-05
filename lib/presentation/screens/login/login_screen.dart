@@ -4,6 +4,8 @@ import 'package:cadetbank/presentation/screens/login/widgets/login_form.dart';
 import 'package:cadetbank/presentation/screens/login/widgets/login_logo.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/navigation/routes.dart';
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
@@ -28,7 +30,9 @@ class LoginScreen extends StatelessWidget {
     bottomNavigationBar: Padding(
       padding: const EdgeInsets.all(Dimens.s20),
       child:  ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, Routes.home);
+        },
         child: Text(
           Strings.login,
           style: Theme.of(context).textTheme.labelMedium,

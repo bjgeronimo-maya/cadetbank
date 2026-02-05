@@ -10,4 +10,6 @@ class Routes {
 
   // R
   static const String registration = "registrationScreen";
+
+  static const String home = "homeScreen";
 }

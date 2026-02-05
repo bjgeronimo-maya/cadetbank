@@ -6,6 +6,7 @@ import 'package:cadetbank/presentation/screens/login/login_screen.dart';
 import 'package:cadetbank/presentation/screens/registration/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:cadetbank/presentation/screens/home/home_screen.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -16,6 +17,8 @@ class AppRouter {
         return AppTransition.slide(child: buildLoginScreen());
       case Routes.registration:
         return AppTransition.slide(child: const RegistrationScreen());
+      case Routes.home:
+      return AppTransition.slide(child: const HomeScreen());
       default:
         return AppTransition.none(child: const SizedBox.shrink());
     }
