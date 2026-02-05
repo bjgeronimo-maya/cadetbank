@@ -24,6 +24,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             _buildNavBar(),
             _buildWalletCard(),
+            _buildTransactionList(),
           ],
         ),
       ),
@@ -128,6 +129,75 @@ Widget _buildWalletCard() {
             ),
           ],
         )
+      ],
+    ),
+  );
+}
+
+Widget _buildTransactionList() {
+  return Container(
+    margin: EdgeInsets.symmetric(horizontal: 16),
+    padding: EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(24),
+      boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 8)],
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Transactions",
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                Text("See all",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green)),
+              ],
+            ),
+            SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Received money from",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey)),
+                    Text("AirtimeCredit",
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold)),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text("3 hours ago",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey)),
+                    Text("P1,600.00",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.green)),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ],
     ),
   );
