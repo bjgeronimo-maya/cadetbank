@@ -56,12 +56,18 @@ class RegistrationScreen extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => const HomeScreen())
               );
             },
-            child: const Text(Strings.kContinue),
+            child: Text(
+              Strings.kContinue,
+              style: Theme.of(context).textTheme.labelMedium
+            ),
           ),
 
-          const SizedBox(height: Dimens.s20),
+          const SizedBox(height: Dimens.s10),
 
           ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.grey[400],
+            ),
             onPressed: () {
               Navigator.pushReplacementNamed(context, Routes.login);
             },
