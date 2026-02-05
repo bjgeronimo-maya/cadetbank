@@ -1,6 +1,7 @@
 import 'package:cadetbank/core/navigation/routes.dart';
 import 'package:cadetbank/presentation/screens/initial/initial_screen.dart';
 import 'package:cadetbank/presentation/screens/login/cubits/login_form/login_form_cubit.dart';
+import 'package:cadetbank/presentation/screens/registration/cubits/registration_form_cubit.dart';
 import 'package:cadetbank/presentation/screens/login/login_screen.dart';
 import 'package:cadetbank/presentation/screens/home/home_screen.dart';
 import 'package:cadetbank/presentation/screens/registration/registration_screen.dart';
@@ -15,7 +16,7 @@ class AppRouter {
       case Routes.login:
         return AppTransition.slide(child: buildLoginScreen());
       case Routes.registration:
-        return AppTransition.slide(child: const RegistrationScreen());
+        return AppTransition.slide(child: buildRegistrationScreen());
       case Routes.home:
         return AppTransition.slide(child: const HomeScreen());
       default:
@@ -30,6 +31,11 @@ class AppRouter {
           ),
         ],
         child: const LoginScreen(),
+      );
+
+  static Widget buildRegistrationScreen() => BlocProvider(
+        create: (_) => RegistrationFormCubit(),
+        child: const RegistrationScreen(),
       );
 }
 
