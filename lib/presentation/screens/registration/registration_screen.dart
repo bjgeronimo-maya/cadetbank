@@ -1,63 +1,66 @@
-
-import 'package:cadetbank/core/navigation/routes.dart';
 import 'package:cadetbank/core/res/values/dimens.dart';
-import 'package:cadetbank/core/res/values/strings.dart';
 import 'package:cadetbank/presentation/screens/registration/widgets/registration_form.dart';
+import 'package:cadetbank/presentation/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatelessWidget {
-  const RegistrationScreen({super.key});
+  RegistrationScreen({super.key});
+
+  final GlobalKey<RegistrationFormState> _formKey =
+      GlobalKey<RegistrationFormState>();
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-    body: Center(
-      child: Padding(
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.close, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
+      body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: Dimens.s20),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            RichText(
-              text: const TextSpan(
-                style: TextStyle(color: Colors.black),
-                children: <TextSpan>[
-                  TextSpan(
-                      text: 'Start an '
-                  ),
-                  TextSpan(
-                    style: TextStyle(color: Colors.green),
-                    text: 'account',
-                  ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: Dimens.s20),
-
-            const RegistrationForm(),
+            const Text("What’s your name?",
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 40),
+            RegistrationForm(key: _formKey),
           ],
         ),
       ),
-    ),
-    bottomNavigationBar: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        ElevatedButton(
-          onPressed: () {},
-          child: const Text(Strings.kContinue),
-        ),
-
-        const SizedBox(height: Dimens.s20),
-
-        ElevatedButton(
-          onPressed: () {
-            Navigator.pushReplacementNamed(context, Routes.login);
-          },
-          child: Text(
-            Strings.login,
-            style: Theme.of(context).textTheme.labelMedium,
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(Dimens.s20),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.black,
+            minimumSize: const Size(double.infinity, 56),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           ),
-        )
-      ],
-    )
-  );
+          onPressed: () {
+            // Validate the form fields
+            if (_formKey.currentState!.validate()) {
+              // Proceed to LoginScreen using MaterialPageRoute
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginScreen()),
+              );
+            } else {
+              // The form will stay on this page and show the red error texts
+              debugPrint(
+                  "Validation failed: Please fill in the required fields.");
+            }
+          },
+          child: const Text("Continue",
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        ),
+      ),
+    );
+  }
 }
