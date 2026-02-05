@@ -4,9 +4,19 @@ Future<void> fetchPersonInfo() async {
     print("Age: 20");
 }
 
+void displayUserInfo(String name, {required int age, String address = "No address provided"}) {
+  print("Name: $name");
+  print("Age: $age years old");
+  print("Address: $address");
+}
+
 void main() async {
     // Item 1
     print("Start fetching...");
     await fetchPersonInfo();
     print("Done!");
+
+    // Item 2
+    displayUserInfo("Anton", age: 23, address: "Quezon City");
+    displayUserInfo("Maki", age: 3);
 }
